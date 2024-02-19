@@ -2,6 +2,7 @@ import * as React from "react";
 import * as Radix from "@radix-ui/react-dropdown-menu"
 import {cva, type VariantProps} from "class-variance-authority"
 import { cn } from "@/src/lib/util"
+import { Check } from "lucide-react";
 
 
 //Trigger props
@@ -32,7 +33,26 @@ interface TriggerProps extends Radix.DropdownMenuTriggerProps, VariantProps<type
     children: React.ReactNode;
 }
 
+//CheckItem props
+const checkVariants = cva(
+    "absolute flex h-3.5 aspect-square items-center justify-center", 
+    {
+        variants: {
+            position: {
+                right: "right-2",
+                left: "left-2",
 
+            }
+        }, 
+        defaultVariants: {
+            position: "right",
+        }
+    }
+)
+
+interface CheckItemProps extends Radix.MenuCheckboxItemProps, VariantProps<typeof checkVariants>{
+
+}
 
 
 //Item Props
@@ -44,6 +64,7 @@ interface ItemProps extends Radix.DropdownMenuItemProps {
 
 const DropdownMenu = Radix.Root;
 const DropdownMenuGroup = Radix.Group;
+const DropdownMenuRadioGroup = Radix.RadioGroup;
 const DropdownMenuPortal = Radix.Portal;
 
 //Trigger
@@ -59,7 +80,6 @@ const DropdownMenuTrigger = React.forwardRef<
         {children}
     </Radix.Trigger>
 ));
-
 
 
 //Content
@@ -92,7 +112,7 @@ const DropdownMenuItem = React.forwardRef<
   }
 >(({className, inset, ...props}, ref) => (
     <Radix.Item
-        className={cn("hover:bg-neutral-800 outline-none p-1 rounded-md hover:cursor-pointer transition:all ease-in duration-100" + 
+        className={cn(" flex cursor-default select-none hover:bg-neutral-800 outline-none p-1 rounded-md hover:cursor-pointer transition:all ease-in duration-100" + 
         " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" ,
         className)}
         ref={ref}
@@ -100,6 +120,28 @@ const DropdownMenuItem = React.forwardRef<
     />
 
 ))
+
+//Checkbox
+const DropdownMenuCheckbox = React.forwardRef<
+    React.ElementRef<typeof Radix.CheckboxItem>,
+    CheckItemProps>(({className, position, children,checked, ...props}, ref) => (
+        <Radix.CheckboxItem
+            ref={ref}
+            className={cn("flex items-center cursor-default select-none outline-none p-1 rounded-md" 
+            +" hover:bg-neutral-800  hover:cursor-pointer transition:all ease-in duration-100" + 
+            " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" +
+            " data-[state=checked]:text-green-500", className)}
+            checked={checked}
+            {...props}
+        >
+            <span className={cn(checkVariants({position}))}>
+                <Radix.ItemIndicator >
+                    <Check className="h-4 aspect-square"/>
+                </Radix.ItemIndicator>
+            </span>
+            {children}
+        </Radix.CheckboxItem>
+    ))
 
 //Todos exports
 export {
@@ -109,4 +151,6 @@ export {
     DropDownMenuContent,
     DropdownMenuItem,
     DropdownMenuGroup,
+    DropdownMenuCheckbox,
+    DropdownMenuRadioGroup
 }
