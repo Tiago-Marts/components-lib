@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { DropDownMenuContent, DropdownMenu, DropdownMenuCheckbox, DropdownMenuItem, DropdownMenuTrigger } from "../components/dropdown";
+import { DropDownMenuContent, DropdowMenuSubTrigger, DropdownMenu, DropdownMenuCheckbox, DropdownMenuItem, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuTrigger } from "../components/dropdown";
 import { ChevronDown } from "lucide-react" ;
 import { useState } from "react";
 
@@ -14,11 +14,87 @@ export default function Home() {
   return (
     <section className="container-xl h-screen  flex flex-row items-center justify-center gap-5">
         <DropdownMenu>
-          <DropdownMenuTrigger> Teste </DropdownMenuTrigger>
+          
+          <DropdownMenuTrigger> Default </DropdownMenuTrigger>
           <DropDownMenuContent align="end" side="bottom">
+            <DropdownMenuLabel> Label </DropdownMenuLabel>
+            <DropdownMenuSeparator/>
             <DropdownMenuItem> Item </DropdownMenuItem>
             <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
             <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+            <DropdownMenuRadioGroup value="radio"> 
+              <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+            </DropdownMenuRadioGroup>
+            <DropdownMenuSub>
+              <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+              <DropdownMenuSubContent sideOffset={10}>
+                <DropdownMenuItem> Teste </DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuSub>
+          </DropDownMenuContent>
+        </DropdownMenu>
+
+        <DropdownMenu>
+          
+          <DropdownMenuTrigger variant={"ghost"}> Ghost </DropdownMenuTrigger>
+          <DropDownMenuContent align="end" side="bottom">
+            <DropdownMenuLabel> Label </DropdownMenuLabel>
+            <DropdownMenuSeparator/>
+            <DropdownMenuItem> Item </DropdownMenuItem>
+            <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+            <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+            <DropdownMenuRadioGroup value="radio"> 
+              <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+            </DropdownMenuRadioGroup>
+            <DropdownMenuSub>
+              <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+              <DropdownMenuSubContent sideOffset={10}>
+                <DropdownMenuItem> Teste </DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuSub>
+          </DropDownMenuContent>
+        </DropdownMenu>
+
+        <DropdownMenu>
+          
+          <DropdownMenuTrigger variant={"outline"}> Outline </DropdownMenuTrigger>
+          <DropDownMenuContent align="end" side="bottom">
+            <DropdownMenuLabel> Label </DropdownMenuLabel>
+            <DropdownMenuSeparator/>
+            <DropdownMenuItem> Item </DropdownMenuItem>
+            <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+            <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+            <DropdownMenuRadioGroup value="radio"> 
+              <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+            </DropdownMenuRadioGroup>
+            <DropdownMenuSub>
+              <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+              <DropdownMenuSubContent sideOffset={10}>
+                <DropdownMenuItem> Teste </DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuSub>
+          </DropDownMenuContent>
+        </DropdownMenu>
+
+        
+        <DropdownMenu>
+          
+          <DropdownMenuTrigger variant={"ghost"} size={"icon"}> <ChevronDown className="h-4 aspect-square"/> </DropdownMenuTrigger>
+          <DropDownMenuContent align="end" side="bottom">
+            <DropdownMenuLabel> Label </DropdownMenuLabel>
+            <DropdownMenuSeparator/>
+            <DropdownMenuItem> Item </DropdownMenuItem>
+            <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+            <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+            <DropdownMenuRadioGroup value="radio"> 
+              <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+            </DropdownMenuRadioGroup>
+            <DropdownMenuSub>
+              <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+              <DropdownMenuSubContent sideOffset={10}>
+                <DropdownMenuItem> Teste </DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuSub>
           </DropDownMenuContent>
         </DropdownMenu>
     </section>

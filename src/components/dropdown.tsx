@@ -2,7 +2,7 @@ import * as React from "react";
 import * as Radix from "@radix-ui/react-dropdown-menu"
 import {cva, type VariantProps} from "class-variance-authority"
 import { cn } from "@/src/lib/util"
-import { Check } from "lucide-react";
+import { Check, Circle } from "lucide-react";
 
 
 //Trigger props
@@ -12,8 +12,8 @@ const triggerVariants = cva(
     variants: {
         variant: {
             default: " bg-neutral-900  hover:bg-neutral-800 ",
-            outline: " bg-transparent border-2 border-neutral-700 hover:bg-neutral-800",
-            ghost: " bg-transparent hover:bg-neutral-900 ",
+            outline: " bg-transparent border-2 border-neutral-700 hover:bg-neutral-800 focus:bg-neutral-800",
+            ghost: " bg-transparent hover:bg-neutral-900 focus:bg-neutral-900 ",
         },
         size: {
             default: " text-lg px-2 py-1",
@@ -54,6 +54,27 @@ interface CheckItemProps extends Radix.MenuCheckboxItemProps, VariantProps<typeo
 
 }
 
+//RadioItem props
+const radioVariants = cva(
+    "absolute flex h-3.5 aspect-square items-center justify-center", 
+    {
+        variants: {
+            position: {
+                right: "right-2",
+                left: "left-2",
+
+            }
+        }, 
+        defaultVariants: {
+            position: "right",
+        }
+    }
+)
+
+interface RadioItemProps extends Radix.MenuRadioItemProps, VariantProps<typeof radioVariants>{
+
+}
+
 
 //Item Props
 interface ItemProps extends Radix.DropdownMenuItemProps {
@@ -61,11 +82,12 @@ interface ItemProps extends Radix.DropdownMenuItemProps {
     inset: number;
 }
 
-
+//Primitivos
 const DropdownMenu = Radix.Root;
 const DropdownMenuGroup = Radix.Group;
 const DropdownMenuRadioGroup = Radix.RadioGroup;
 const DropdownMenuPortal = Radix.Portal;
+const DropdownMenuSub = Radix.Sub;
 
 //Trigger
 const DropdownMenuTrigger = React.forwardRef<
@@ -91,7 +113,7 @@ React.ComponentPropsWithoutRef<typeof Radix.Content>
         <Radix.Content 
             ref={ref}
             sideOffset={sideOffset}
-            className={cn("min-w-[8rem] rounded-md overflow-hidden bg-neutral-900 p-2" +
+            className={cn("min-w-[8rem] rounded-md text-sm  overflow-hidden bg-neutral-900 p-1" +
             " data-[state=open]:animate-in data-[state-open]:fade-in-0 data-[state=open]:zoom-in-95" + 
             " data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95" +
             " data-[side=left]:slide-in-from-right-3" +
@@ -112,8 +134,11 @@ const DropdownMenuItem = React.forwardRef<
   }
 >(({className, inset, ...props}, ref) => (
     <Radix.Item
-        className={cn(" flex cursor-default select-none hover:bg-neutral-800 outline-none p-1 rounded-md hover:cursor-pointer transition:all ease-in duration-100" + 
+        className={cn("  flex cursor-default select-none outline-none transition:all px-2 py-1.5 rounded-sm" + 
+        " hover:bg-neutral-800 hover:cursor-pointer  ease-in duration-100" +
+        " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
         " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" ,
+        inset && 'pl-8',
         className)}
         ref={ref}
         {...props}
@@ -127,9 +152,10 @@ const DropdownMenuCheckbox = React.forwardRef<
     CheckItemProps>(({className, position, children,checked, ...props}, ref) => (
         <Radix.CheckboxItem
             ref={ref}
-            className={cn("flex items-center cursor-default select-none outline-none p-1 rounded-md" 
-            +" hover:bg-neutral-800  hover:cursor-pointer transition:all ease-in duration-100" + 
+            className={cn("flex relative items-center cursor-default select-none outline-none p-1 transition:all rounded-sm" 
+            +" hover:bg-neutral-800  hover:cursor-pointer  ease-in duration-100" + 
             " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" +
+            " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
             " data-[state=checked]:text-green-500", className)}
             checked={checked}
             {...props}
@@ -141,7 +167,97 @@ const DropdownMenuCheckbox = React.forwardRef<
             </span>
             {children}
         </Radix.CheckboxItem>
-    ))
+))
+
+//Radio 
+const DropdownMenuRadioItem = React.forwardRef<
+    React.ElementRef<typeof Radix.RadioItem>,
+    RadioItemProps>(({className, position, children, ...props }, ref) => (
+        <Radix.RadioItem
+            ref={ref}
+            className={cn("flex relative  items-center cursor-default select-none outline-none transition:al p-1 rounded-sm" 
+            +" hover:bg-neutral-800  hover:cursor-pointer l ease-in duration-100" + 
+            " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" +
+            " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
+            " data-[state=checked]:text-green-500", className)}
+            {...props}
+        >
+            <span className={cn(radioVariants({position}))}>
+                <Radix.ItemIndicator>
+                    <Circle className="h-2 aspect-square fill-current"/>
+                </Radix.ItemIndicator>
+            </span>
+            {children}
+        </Radix.RadioItem>
+))
+
+//Label
+const DropdownMenuLabel = React.forwardRef<
+    React.ElementRef<typeof Radix.Label>,
+    React.ComponentPropsWithoutRef<typeof Radix.Label> & {inset?: boolean}>(({className, inset, ...props}, ref) => (
+    <Radix.Label
+        ref={ref}
+        className={cn("px-2 py-1.5 text-sm font-semibold text-neutral-500", 
+        inset && 'pl-8', 
+        className)}
+        {...props}
+    />
+))
+
+//Separator
+const DropdownMenuSeparator = React.forwardRef<
+    React.ElementRef<typeof Radix.Separator>,
+    React.ComponentPropsWithoutRef<typeof Radix.Separator>>(({className, ...props}, ref) => (
+        <Radix.Separator
+            ref={ref}
+            className={cn("-mx-1 my-1 h-px bg-neutral-700", className)}
+            {...props}
+        />
+))
+
+//Subcontent 
+const DropdownMenuSubContent = React.forwardRef<
+React.ElementRef<typeof Radix.SubContent>,
+React.ComponentPropsWithoutRef<typeof Radix.SubContent>
+>(({sideOffset=4, className, ...props}, ref) => (
+    
+    <Radix.SubContent 
+        ref={ref}
+        sideOffset={sideOffset}
+        className={cn("min-w-[8rem] rounded-md overflow-hidden bg-neutral-900 p-1" +
+            " data-[state=open]:animate-in data-[state-open]:fade-in-0 data-[state=open]:zoom-in-95" + 
+            " data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95" +
+            " data-[side=left]:slide-in-from-right-3" +
+            " data-[side=right]:slide-in-from-left-3" +
+            " data-[side=bottom]:slide-in-from-top-3" +
+            " data-[side=top]:slide-in-from-bottom-3"
+        , className)}
+        {...props}        
+    />
+    
+))
+
+//Subtrigger
+const DropdowMenuSubTrigger = React.forwardRef<
+  React.ElementRef<typeof Radix.SubTrigger>,
+  React.ComponentPropsWithoutRef<typeof Radix.SubTrigger> & {
+    inset?: boolean
+  }
+>(({className, inset, ...props}, ref) => (
+    <Radix.SubTrigger
+        className={cn(" flex cursor-default select-none rounded-sm" + 
+        " hover:bg-neutral-800 outline-none p-1  hover:cursor-pointer transition:all ease-in duration-100" + 
+        " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
+        " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" ,
+        inset && 'pl-8',
+        className)}
+        ref={ref}
+        {...props}
+    />
+
+))
+
+
 
 //Todos exports
 export {
@@ -152,5 +268,11 @@ export {
     DropdownMenuItem,
     DropdownMenuGroup,
     DropdownMenuCheckbox,
-    DropdownMenuRadioGroup
+    DropdownMenuRadioGroup,
+    DropdownMenuRadioItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuSub,
+    DropdownMenuSubContent,
+    DropdowMenuSubTrigger
 }
