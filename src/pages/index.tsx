@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { DropDownMenuContent, DropdowMenuSubTrigger, DropdownMenu, DropdownMenuCheckbox, DropdownMenuItem, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuTrigger } from "../components/dropdown";
 import { ChevronDown } from "lucide-react" ;
 import { useState } from "react";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue, SelectViewPort } from "../components/select";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -97,6 +98,13 @@ export default function Home() {
             </DropdownMenuSub>
           </DropDownMenuContent>
         </DropdownMenu>
+
+        <Select>
+          <SelectTrigger> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
+          <SelectContent side="bottom">
+            <SelectItem value="item"> Item </SelectItem>
+          </SelectContent>
+        </Select>
     </section>
   );
 }
