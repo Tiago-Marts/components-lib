@@ -1,20 +1,24 @@
+## Introdução
+Essa é uma biblioteca pessoal de componentes que eu reutilizo com frequência. Construí ela fortemente influenciado pelo [shadcn/ui][https://ui.shadcn.com], seguindo o mesmo modelo de estruturação de componentes e a mudando conforme eu achei necessário. 
 
 
-## Getting Started
 
-First, run the development server:
+## Componentes
+Seguindo a filosofia e estrutura do [shadcn/ui][https://ui.shadcn.com], o código foi montado da seguinte forma: 
+- [x] É acessível?
+- [x] Os componentes são de fácil estilização? 
+- [x] É possível mudar a estrutura e o código do meu jeito? 
+- [x] É fácil de navegar pelo código e identificar as partes que eu quero?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-## Components
+**Componentes a serem feitos**
+-[x] Dropdown
+- [ ] Select
+- [ ] Checkbox
+- [ ] Card
+- [ ] Skelleton
+- [ ] Tooltip
+- [ ] Resizable
+- [ ] Tooltip
 
 ### Dropdown 
 
@@ -25,6 +29,11 @@ bun dev
 ### Card
 
 ### Skelleton
+
+### Tooltip
+
+### Resizable 
+
 
 ### Tooltip
 
