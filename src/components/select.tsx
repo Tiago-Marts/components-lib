@@ -7,7 +7,8 @@ import { ChevronDown } from 'lucide-react';
 //Trigger variants
 //Trigger props
 const triggerVariants = cva(
-    "flex flex-row items-center justify-center  transition-all font-medium duration-300 ease-[cubic-bezier(0.33, 1, 0.68, 1)] rounded-lg  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background select-none",
+    "flex flex-row items-center justify-between w-full max-w-[200px] transition-all font-medium duration-300 ease-[cubic-bezier(0.33, 1, 0.68, 1)] rounded-lg" +  
+    " focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background select-none",
     {
     variants: {
         variant: {
@@ -49,6 +50,9 @@ const SelectTrigger = React.forwardRef<
         {...props}
     >
         {children}
+        <Radix.Icon>
+            <ChevronDown className='h-4 aspect-square text-neutral-500'/>
+        </Radix.Icon>
     </Radix.Trigger>
 ))
 
@@ -84,7 +88,7 @@ const SelectContent = React.forwardRef<
             " data-[side=right]:slide-in-from-left-3" +
             " data-[side=bottom]:slide-in-from-top-3" +
             " data-[side=top]:slide-in-from-bottom-3",
-            position === "popper" && "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+            position === "popper" && "data-[side=bottom]:translate-y-2 data-[side=left]:-translate-x-2 data-[side=right]:translate-x-2 data-[side=top]:-translate-y-2",
              className)}
              position={position}
             {...props}    

@@ -100,7 +100,7 @@ export default function Home() {
         </DropdownMenu>
 
         <Select>
-          <SelectTrigger> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
+          <SelectTrigger variant={"outline"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
           <SelectContent side="bottom">
             <SelectItem value="item"> Item </SelectItem>
           </SelectContent>
