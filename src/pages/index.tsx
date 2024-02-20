@@ -13,92 +13,272 @@ export default function Home() {
     checked? setChecked(false) : setChecked(true);
   }
   return (
-    <section className="container-xl h-screen  flex flex-row items-center justify-center gap-5">
-        <DropdownMenu>
+    <section className="container-xl h-screen  flex flex-col items-center justify-center gap-5">
+      <section className="w-full flex flex-row items-center justify-center gap-5">
+        <section className="flex flex-col items-center justify-center gap-3">
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger size={"icon"}> <ChevronDown/> </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
           
-          <DropdownMenuTrigger> Default </DropdownMenuTrigger>
-          <DropDownMenuContent align="end" side="bottom">
-            <DropdownMenuLabel> Label </DropdownMenuLabel>
-            <DropdownMenuSeparator/>
-            <DropdownMenuItem> Item </DropdownMenuItem>
-            <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
-            <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
-            <DropdownMenuRadioGroup value="radio"> 
-              <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
-            </DropdownMenuRadioGroup>
-            <DropdownMenuSub>
-              <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
-              <DropdownMenuSubContent sideOffset={10}>
-                <DropdownMenuItem> Teste </DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuSub>
-          </DropDownMenuContent>
-        </DropdownMenu>
-
-        <DropdownMenu>
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger> Default </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
           
-          <DropdownMenuTrigger variant={"ghost"}> Ghost </DropdownMenuTrigger>
-          <DropDownMenuContent align="end" side="bottom">
-            <DropdownMenuLabel> Label </DropdownMenuLabel>
-            <DropdownMenuSeparator/>
-            <DropdownMenuItem> Item </DropdownMenuItem>
-            <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
-            <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
-            <DropdownMenuRadioGroup value="radio"> 
-              <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
-            </DropdownMenuRadioGroup>
-            <DropdownMenuSub>
-              <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
-              <DropdownMenuSubContent sideOffset={10}>
-                <DropdownMenuItem> Teste </DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuSub>
-          </DropDownMenuContent>
-        </DropdownMenu>
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger size={"sm"}> Default </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
 
-        <DropdownMenu>
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger size={"xs"}> Default </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
+        </section>
+
+        <section className="flex flex-col items-center justify-center gap-3">
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger variant={"ghost"} size={"icon"}> <ChevronDown/> </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
           
-          <DropdownMenuTrigger variant={"outline"}> Outline </DropdownMenuTrigger>
-          <DropDownMenuContent align="end" side="bottom">
-            <DropdownMenuLabel> Label </DropdownMenuLabel>
-            <DropdownMenuSeparator/>
-            <DropdownMenuItem> Item </DropdownMenuItem>
-            <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
-            <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
-            <DropdownMenuRadioGroup value="radio"> 
-              <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
-            </DropdownMenuRadioGroup>
-            <DropdownMenuSub>
-              <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
-              <DropdownMenuSubContent sideOffset={10}>
-                <DropdownMenuItem> Teste </DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuSub>
-          </DropDownMenuContent>
-        </DropdownMenu>
-
-        
-        <DropdownMenu>
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger variant={"ghost"} > Ghost </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
           
-          <DropdownMenuTrigger variant={"ghost"} size={"icon"}> <ChevronDown className="h-4 aspect-square"/> </DropdownMenuTrigger>
-          <DropDownMenuContent align="end" side="bottom">
-            <DropdownMenuLabel> Label </DropdownMenuLabel>
-            <DropdownMenuSeparator/>
-            <DropdownMenuItem> Item </DropdownMenuItem>
-            <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
-            <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
-            <DropdownMenuRadioGroup value="radio"> 
-              <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
-            </DropdownMenuRadioGroup>
-            <DropdownMenuSub>
-              <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
-              <DropdownMenuSubContent sideOffset={10}>
-                <DropdownMenuItem> Teste </DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuSub>
-          </DropDownMenuContent>
-        </DropdownMenu>
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger variant={"ghost"} size={"sm"}> Ghost </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
 
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger variant={"ghost"} size={"xs"}> Ghost </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
+        </section>
+
+
+        <section className="flex flex-col items-center justify-center gap-3">
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger variant={"outline"} size={"icon"}> <ChevronDown/> </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
+          
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger variant={"outline"}> Outline </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
+          
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger variant={"outline"} size={"sm"}> Outline </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            
+            <DropdownMenuTrigger variant={"outline"} size={"xs"}> Outline </DropdownMenuTrigger>
+            <DropDownMenuContent align="end" side="bottom">
+              <DropdownMenuLabel> Label </DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem> Item </DropdownMenuItem>
+              <DropdownMenuItem disabled> Desabilitado </DropdownMenuItem>
+              <DropdownMenuCheckbox checked={checked} onClick={handleChecked}> Checkbox </DropdownMenuCheckbox>
+              <DropdownMenuRadioGroup value="radio"> 
+                <DropdownMenuRadioItem value="radio"> Radio</DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+              <DropdownMenuSub>
+                <DropdowMenuSubTrigger> Sub section </DropdowMenuSubTrigger>
+                <DropdownMenuSubContent sideOffset={10}>
+                  <DropdownMenuItem> Teste </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropDownMenuContent>
+          </DropdownMenu>
+        </section>
+
+
+      </section>
+
+      <section className="flex flex-row w-full items-center justify-center gap-5">
+        <section className="flex flex-col items-center justify-center gap-3">
         <Select>
           <SelectTrigger variant={"outline"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
           <SelectContent side="bottom">
@@ -115,6 +295,153 @@ export default function Home() {
             </SelectGroup>
           </SelectContent>
         </Select>
+
+        <Select>
+          <SelectTrigger variant={"outline"} size={"sm"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
+          <SelectContent side="bottom">
+            <SelectGroup>
+            <SelectLabel> Label </SelectLabel>
+            <SelectSeparator/>
+            <SelectItem value="item1"> Item 1 </SelectItem>
+            <SelectItem value="item2"> Item 2 </SelectItem>
+            <SelectItem value="item3"> Item 3</SelectItem>
+            <SelectItem value="item4"> Item 4 </SelectItem>
+            <SelectItem value="item5"> Item 5</SelectItem>
+            <SelectItem value="item6"> Item 6</SelectItem>
+            <SelectItem value="item7"> Item 7</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+
+        <Select>
+          <SelectTrigger variant={"outline"} size={"xs"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
+          <SelectContent side="bottom">
+            <SelectGroup>
+            <SelectLabel> Label </SelectLabel>
+            <SelectSeparator/>
+            <SelectItem value="item1"> Item 1 </SelectItem>
+            <SelectItem value="item2"> Item 2 </SelectItem>
+            <SelectItem value="item3"> Item 3</SelectItem>
+            <SelectItem value="item4"> Item 4 </SelectItem>
+            <SelectItem value="item5"> Item 5</SelectItem>
+            <SelectItem value="item6"> Item 6</SelectItem>
+            <SelectItem value="item7"> Item 7</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        </section>
+
+        <section className="flex flex-col items-center justify-center gap-3">
+        <Select>
+          <SelectTrigger variant={"default"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
+          <SelectContent side="bottom">
+            <SelectGroup>
+            <SelectLabel> Label </SelectLabel>
+            <SelectSeparator/>
+            <SelectItem value="item1"> Item 1 </SelectItem>
+            <SelectItem value="item2"> Item 2 </SelectItem>
+            <SelectItem value="item3"> Item 3</SelectItem>
+            <SelectItem value="item4"> Item 4 </SelectItem>
+            <SelectItem value="item5"> Item 5</SelectItem>
+            <SelectItem value="item6"> Item 6</SelectItem>
+            <SelectItem value="item7"> Item 7</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+
+        <Select>
+          <SelectTrigger variant={"default"} size={"sm"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
+          <SelectContent side="bottom">
+            <SelectGroup>
+            <SelectLabel> Label </SelectLabel>
+            <SelectSeparator/>
+            <SelectItem value="item1"> Item 1 </SelectItem>
+            <SelectItem value="item2"> Item 2 </SelectItem>
+            <SelectItem value="item3"> Item 3</SelectItem>
+            <SelectItem value="item4"> Item 4 </SelectItem>
+            <SelectItem value="item5"> Item 5</SelectItem>
+            <SelectItem value="item6"> Item 6</SelectItem>
+            <SelectItem value="item7"> Item 7</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+
+        <Select>
+          <SelectTrigger variant={"default"} size={"xs"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
+          <SelectContent side="bottom">
+            <SelectGroup>
+            <SelectLabel> Label </SelectLabel>
+            <SelectSeparator/>
+            <SelectItem value="item1"> Item 1 </SelectItem>
+            <SelectItem value="item2"> Item 2 </SelectItem>
+            <SelectItem value="item3"> Item 3</SelectItem>
+            <SelectItem value="item4"> Item 4 </SelectItem>
+            <SelectItem value="item5"> Item 5</SelectItem>
+            <SelectItem value="item6"> Item 6</SelectItem>
+            <SelectItem value="item7"> Item 7</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        </section>
+
+        <section className="flex flex-col items-center justify-center gap-3">
+        <Select>
+          <SelectTrigger variant={"ghost"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
+          <SelectContent side="bottom">
+            <SelectGroup>
+            <SelectLabel> Label </SelectLabel>
+            <SelectSeparator/>
+            <SelectItem value="item1"> Item 1 </SelectItem>
+            <SelectItem value="item2"> Item 2 </SelectItem>
+            <SelectItem value="item3"> Item 3</SelectItem>
+            <SelectItem value="item4"> Item 4 </SelectItem>
+            <SelectItem value="item5"> Item 5</SelectItem>
+            <SelectItem value="item6"> Item 6</SelectItem>
+            <SelectItem value="item7"> Item 7</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+
+        <Select>
+          <SelectTrigger variant={"ghost"} size={"sm"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
+          <SelectContent side="bottom">
+            <SelectGroup>
+            <SelectLabel> Label </SelectLabel>
+            <SelectSeparator/>
+            <SelectItem value="item1"> Item 1 </SelectItem>
+            <SelectItem value="item2"> Item 2 </SelectItem>
+            <SelectItem value="item3"> Item 3</SelectItem>
+            <SelectItem value="item4"> Item 4 </SelectItem>
+            <SelectItem value="item5"> Item 5</SelectItem>
+            <SelectItem value="item6"> Item 6</SelectItem>
+            <SelectItem value="item7"> Item 7</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+
+        <Select>
+          <SelectTrigger variant={"ghost"} size={"xs"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
+          <SelectContent side="bottom">
+            <SelectGroup>
+            <SelectLabel> Label </SelectLabel>
+            <SelectSeparator/>
+            <SelectItem value="item1"> Item 1 </SelectItem>
+            <SelectItem value="item2"> Item 2 </SelectItem>
+            <SelectItem value="item3"> Item 3</SelectItem>
+            <SelectItem value="item4"> Item 4 </SelectItem>
+            <SelectItem value="item5"> Item 5</SelectItem>
+            <SelectItem value="item6"> Item 6</SelectItem>
+            <SelectItem value="item7"> Item 7</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        </section>
+
+
+
+
+      </section>
+
     </section>
   );
 }

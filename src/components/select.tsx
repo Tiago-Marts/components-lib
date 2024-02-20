@@ -18,8 +18,8 @@ const triggerVariants = cva(
         },
         size: {
             default: " text-lg px-2 py-1",
-            sm: " text-sm px-1 py-1/2",
-            xs: " text-sx p-1",
+            sm: " text-sm p-1",
+            xs: " text-xs px-1 py-[0.3rem]",
             icon: " p-1 h-8  aspect-square",
         },
     },
