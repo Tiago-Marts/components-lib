@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as Radix from '@radix-ui/react-select';
 import {cva, type VariantProps} from 'class-variance-authority'
 import {cn} from '@/src/lib/util'
-import { ChevronDown } from 'lucide-react';
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 //Trigger variants
 //Trigger props
@@ -32,6 +32,26 @@ const triggerVariants = cva(
 interface TriggerProps extends Radix.SelectTriggerProps, VariantProps<typeof triggerVariants> {
     className?: string;
     children: React.ReactNode;
+}
+
+const checkVariants = cva(
+    "absolute flex h-3.5 aspect-square items-center justify-center", 
+    {
+        variants: {
+            position: {
+                right: "right-2",
+                left: "left-2",
+
+            }
+        }, 
+        defaultVariants: {
+            position: "right",
+        }
+    }
+)
+
+interface ItemProps extends Radix.SelectItemProps, VariantProps<typeof checkVariants>{
+
 }
 
 const Select = Radix.Root;
@@ -72,6 +92,21 @@ const SelectScrollDownButton = React.forwardRef<
     </Radix.ScrollDownButton>
 ))
 
+const SelectScrollUpButton = React.forwardRef<
+    React.ElementRef<typeof Radix.ScrollUpButton>,
+    React.ComponentPropsWithoutRef<typeof Radix.ScrollUpButton>
+>(({className, ...props}, ref) => (
+    <Radix.ScrollUpButton
+        ref={ref}
+        className={cn(
+            "flex cursor-default items-center justify-center py-1"
+        )}
+        {...props}
+    >
+        <ChevronUp className='h-4 aspect-square'/>
+    </Radix.ScrollUpButton>
+))
+
 //Content
 const SelectContent = React.forwardRef<
     React.ElementRef<typeof Radix.Content>,
@@ -81,7 +116,7 @@ const SelectContent = React.forwardRef<
         <Radix.Content            
             ref={ref}
             sideOffset={sideOffset}
-            className={cn("relative min-w-[8rem] max-h-96 rounded-md text-sm  overflow-hidden bg-neutral-900 p-1" +
+            className={cn("relative min-w-[8rem] max-h-64 rounded-md text-sm  overflow-hidden bg-neutral-900 p-1" +
             " data-[state=open]:animate-in data-[state-open]:fade-in-0 data-[state=open]:zoom-in-95" + 
             " data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95" +
             " data-[side=left]:slide-in-from-right-3" +
@@ -93,6 +128,7 @@ const SelectContent = React.forwardRef<
              position={position}
             {...props}    
         >
+            <SelectScrollUpButton/>
             <Radix.Viewport
                 className={cn(
                     "p-1",
@@ -110,19 +146,49 @@ const SelectContent = React.forwardRef<
 //Item
 const SelectItem = React.forwardRef<
     React.ElementRef<typeof Radix.Item>,
-    React.ComponentPropsWithoutRef<typeof Radix.Item> & {inset?: boolean}>(({className,children, inset, ...props},ref) => (
+    ItemProps & {inset?: boolean}>(({className,children,position, inset, ...props},ref) => (
         <Radix.Item
             ref={ref}
-            className={cn("  flex cursor-default select-none outline-none transition:all px-2 py-1.5 rounded-sm" + 
+            className={cn("  flex items-center cursor-default select-none outline-none transition:all px-2 py-1.5 rounded-sm" + 
             " hover:bg-neutral-800 hover:cursor-pointer  ease-in duration-100" +
             " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
+            " data-[state=checked]:text-green-500" +
             " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" ,
             inset && 'pl-8',
             className)}
             {...props}
         >
             <Radix.ItemText> {children}</Radix.ItemText>
+            <span className={cn(checkVariants({position}))}>
+                <Radix.ItemIndicator >
+                    <Check className="h-4 aspect-square"/>
+                </Radix.ItemIndicator>
+            </span>
         </Radix.Item>
+))
+
+//Label
+const SelectLabel = React.forwardRef<
+    React.ElementRef<typeof Radix.Label>,
+    React.ComponentPropsWithoutRef<typeof Radix.Label> & {inset?: boolean}>(({className, inset, ...props}, ref) => (
+    <Radix.Label
+        ref={ref}
+        className={cn("px-2 py-1.5 text-sm font-semibold text-neutral-500", 
+        inset && 'pl-8', 
+        className)}
+        {...props}
+    />
+))
+
+//Separator
+const SelectSeparator = React.forwardRef<
+    React.ElementRef<typeof Radix.Separator>,
+    React.ComponentPropsWithoutRef<typeof Radix.Separator>>(({className, ...props}, ref) => (
+        <Radix.Separator
+            ref={ref}
+            className={cn("-mx-1 my-1 h-px bg-neutral-700", className)}
+            {...props}
+        />
 ))
 
 
@@ -134,5 +200,7 @@ export{
     SelectContent,
     SelectItem,
     SelectValue,
-    SelectViewPort
+    SelectViewPort,
+    SelectLabel,
+    SelectSeparator,
 }

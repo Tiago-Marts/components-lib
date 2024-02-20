@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { DropDownMenuContent, DropdowMenuSubTrigger, DropdownMenu, DropdownMenuCheckbox, DropdownMenuItem, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuTrigger } from "../components/dropdown";
 import { ChevronDown } from "lucide-react" ;
 import { useState } from "react";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue, SelectViewPort } from "../components/select";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue, SelectViewPort } from "../components/select";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -102,7 +102,17 @@ export default function Home() {
         <Select>
           <SelectTrigger variant={"outline"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
           <SelectContent side="bottom">
-            <SelectItem value="item"> Item </SelectItem>
+            <SelectGroup>
+            <SelectLabel> Label </SelectLabel>
+            <SelectSeparator/>
+            <SelectItem value="item1"> Item 1 </SelectItem>
+            <SelectItem value="item2"> Item 2 </SelectItem>
+            <SelectItem value="item3"> Item 3</SelectItem>
+            <SelectItem value="item4"> Item 4 </SelectItem>
+            <SelectItem value="item5"> Item 5</SelectItem>
+            <SelectItem value="item6"> Item 6</SelectItem>
+            <SelectItem value="item7"> Item 7</SelectItem>
+            </SelectGroup>
           </SelectContent>
         </Select>
     </section>
