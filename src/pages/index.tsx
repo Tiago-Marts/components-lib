@@ -4,6 +4,7 @@ import { DropDownMenuContent, DropdowMenuSubTrigger, DropdownMenu, DropdownMenuC
 import { ChevronDown } from "lucide-react" ;
 import { useState } from "react";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue, SelectViewPort } from "../components/select";
+import { Panel, PanelGroup, PanelHandler } from "../components/resizable-panels";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -437,9 +438,22 @@ export default function Home() {
         </Select>
         </section>
 
+      </section>
 
-
-
+      <section className="w-full">
+        <PanelGroup direction="horizontal" variant={"outline"}>
+          <Panel defaultSize={60} className=" h-[20rem]"></Panel>
+          <PanelHandler withHandle/>
+          <Panel defaultSize={20} className="h-[20rem]"></Panel>
+          <PanelHandler withHandle/>
+          <Panel defaultSize={10}>
+            <PanelGroup direction="vertical" >
+              <Panel defaultSize={50} ></Panel>
+              <PanelHandler withHandle/>
+              <Panel defaultSize={40}></Panel>
+            </PanelGroup>
+          </Panel>
+        </PanelGroup>
       </section>
 
     </section>
