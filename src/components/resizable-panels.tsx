@@ -4,40 +4,35 @@ import {cva, type VariantProps} from 'class-variance-authority'
 import {cn} from '@/src/lib/util'
 import { GripVertical } from 'lucide-react';
 
-//Panel Variants
-const panelVariants = cva(
-    "relative flex h-full w-full data-[panel-group-direction=vertical]:flex-row ",
-    {
-        variants: {
-            variant: {
-                solid: "gap-1  *:bg-neutral-900 *:rounded-md",
-                outline: "border rounded-md border-neutral-700", 
-            }
-        },
-        defaultVariants: {
-            variant: "solid",
-        }
-    }
-)
 
-interface PanelGroupStyleProps extends PanelPrimitive.PanelGroupProps, VariantProps<typeof panelVariants>{}
 
 
 //PanelGroup
 const PanelGroup = React.forwardRef<
     React.ElementRef<typeof PanelPrimitive.PanelGroup>,
-    PanelGroupStyleProps 
->(({className,variant, ...props}, ref) => (
+    React.ComponentPropsWithoutRef<typeof PanelPrimitive.PanelGroup> 
+>(({className, ...props}, ref) => (
     <PanelPrimitive.PanelGroup
         ref={ref}
-        className={cn(panelVariants({variant}))}
+        className={cn("relative flex h-full w-full gap-px data-[panel-group-direction=vertical]:flex-row", className)}
         {...props}
     />
 ));
 
 
 //Panel
-const Panel = PanelPrimitive.Panel;
+const Panel = React.forwardRef<
+    React.ElementRef<typeof PanelPrimitive.Panel>,
+    React.ComponentPropsWithoutRef<typeof PanelPrimitive.Panel>
+>(({className, ...props}, ref) => (
+    <PanelPrimitive.Panel
+        ref={ref}
+        className={cn(
+            "bg-neutral-900 rounded-md ", 
+            className)}
+        {...props}
+    />
+));
 
 const PanelHandler = React.forwardRef<
     React.ElementRef<typeof PanelPrimitive.PanelResizeHandle>,
@@ -45,7 +40,7 @@ const PanelHandler = React.forwardRef<
 >(({className, withHandle = false , ...props}, ref) => (
     <PanelPrimitive.PanelResizeHandle
         className={cn(
-            "handler relative flex items-center justify-center w-px bg-neutral-700 data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:h-px  " 
+            "handler relative flex items-center justify-center w-px  data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:h-px  " 
         , className)}
         {...props}
 

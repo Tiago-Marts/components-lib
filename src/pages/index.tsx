@@ -441,13 +441,13 @@ export default function Home() {
       </section>
 
       <section className="w-full">
-        <PanelGroup direction="horizontal" variant={"outline"}>
+        <PanelGroup direction="horizontal" >
           <Panel defaultSize={60} className=" h-[20rem]"></Panel>
           <PanelHandler withHandle/>
           <Panel defaultSize={20} className="h-[20rem]"></Panel>
           <PanelHandler withHandle/>
-          <Panel defaultSize={10}>
-            <PanelGroup direction="vertical" >
+          <Panel defaultSize={10} className="bg-transparent">
+            <PanelGroup direction="vertical"   >
               <Panel defaultSize={50} ></Panel>
               <PanelHandler withHandle/>
               <Panel defaultSize={40}></Panel>
