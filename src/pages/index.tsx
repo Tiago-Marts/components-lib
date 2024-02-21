@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react" ;
 import { useState } from "react";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue, SelectViewPort } from "../components/select";
 import { Panel, PanelGroup, PanelHandler } from "../components/resizable-panels";
+import { Checkbox } from "../components/checkbox";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -436,6 +437,10 @@ export default function Home() {
             </SelectGroup>
           </SelectContent>
         </Select>
+        </section>
+
+        <section>
+          <Checkbox/> 
         </section>
 
       </section>
