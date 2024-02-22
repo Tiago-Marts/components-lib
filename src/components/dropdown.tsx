@@ -7,7 +7,7 @@ import { Check, Circle } from "lucide-react";
 
 //Trigger props
 const triggerVariants = cva(
-    "flex flex-row items-center justify-center  transition-all font-medium duration-300 ease-[cubic-bezier(0.33, 1, 0.68, 1)] rounded-lg  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background select-none",
+    "flex flex-row items-center justify-center  transition-all font-medium duration-300 ease-[cubic-bezier(0.33, 1, 0.68, 1)]   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background select-none",
     {
     variants: {
         variant: {
@@ -16,10 +16,10 @@ const triggerVariants = cva(
             ghost: " bg-transparent hover:bg-neutral-900 focus:bg-neutral-900 ",
         },
         size: {
-            default: " text-lg px-2 py-1",
-            sm: " text-sm p-1",
-            xs: " text-xs px-1 py-[0.3rem]",
-            icon: " p-1 h-8  aspect-square",
+            default: " text-lg px-2 py-1 rounded-lg",
+            sm: " text-sm px-2 py-1 rounded-full",
+            xs: " text-xs px-1.5 py-1 rounded-full px-1 py-[0.3rem]",
+            icon: " p-2 rounded-full aspect-square",
         },
     },
     defaultVariants: {
@@ -113,7 +113,7 @@ React.ComponentPropsWithoutRef<typeof Radix.Content>
         <Radix.Content 
             ref={ref}
             sideOffset={sideOffset}
-            className={cn("min-w-[8rem] rounded-md text-sm  overflow-hidden bg-neutral-900 p-1" +
+            className={cn("min-w-[8rem] rounded-md text-sm  overflow-hidden bg-neutral-900 p-1 shadow-lg shadow-neutral-950" +
             " data-[state=open]:animate-in data-[state-open]:fade-in-0 data-[state=open]:zoom-in-95" + 
             " data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95" +
             " data-[side=left]:slide-in-from-right-3" +
@@ -224,7 +224,7 @@ React.ComponentPropsWithoutRef<typeof Radix.SubContent>
     <Radix.SubContent 
         ref={ref}
         sideOffset={sideOffset}
-        className={cn("min-w-[8rem] rounded-md overflow-hidden bg-neutral-900 p-1" +
+        className={cn("min-w-[8rem] rounded-md overflow-hidden bg-neutral-900 p-1 shadow-md shadow-neutral-950" +
             " data-[state=open]:animate-in data-[state-open]:fade-in-0 data-[state=open]:zoom-in-95" + 
             " data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95" +
             " data-[side=left]:slide-in-from-right-3" +

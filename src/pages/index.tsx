@@ -20,7 +20,7 @@ export default function Home() {
         <section className="flex flex-col items-center justify-center gap-3">
           <DropdownMenu>
             
-            <DropdownMenuTrigger size={"icon"}> <ChevronDown/> </DropdownMenuTrigger>
+            <DropdownMenuTrigger size={"icon"}> <ChevronDown className="h-5"/> </DropdownMenuTrigger>
             <DropDownMenuContent align="end" side="bottom">
               <DropdownMenuLabel> Label </DropdownMenuLabel>
               <DropdownMenuSeparator/>
@@ -106,7 +106,7 @@ export default function Home() {
         <section className="flex flex-col items-center justify-center gap-3">
           <DropdownMenu>
             
-            <DropdownMenuTrigger variant={"ghost"} size={"icon"}> <ChevronDown/> </DropdownMenuTrigger>
+            <DropdownMenuTrigger variant={"ghost"} size={"icon"}> <ChevronDown className="h-5"/> </DropdownMenuTrigger>
             <DropDownMenuContent align="end" side="bottom">
               <DropdownMenuLabel> Label </DropdownMenuLabel>
               <DropdownMenuSeparator/>
@@ -193,7 +193,7 @@ export default function Home() {
         <section className="flex flex-col items-center justify-center gap-3">
           <DropdownMenu>
             
-            <DropdownMenuTrigger variant={"outline"} size={"icon"}> <ChevronDown/> </DropdownMenuTrigger>
+            <DropdownMenuTrigger variant={"outline"} size={"icon"} > <ChevronDown className="h-5"/> </DropdownMenuTrigger>
             <DropDownMenuContent align="end" side="bottom">
               <DropdownMenuLabel> Label </DropdownMenuLabel>
               <DropdownMenuSeparator/>

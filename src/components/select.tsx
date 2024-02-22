@@ -17,10 +17,10 @@ const triggerVariants = cva(
             ghost: " bg-transparent hover:bg-neutral-900 focus:bg-neutral-900 ",
         },
         size: {
-            default: " text-lg px-2 py-1",
-            sm: " text-sm p-1",
-            xs: " text-xs px-1 py-[0.3rem]",
-            icon: " p-1 h-8  aspect-square",
+            default: " text-lg px-2 py-1 rounded-lg",
+            sm: " text-sm px-2 py-1 rounded-full",
+            xs: " text-xs px-1.5 py-1 rounded-full px-1 py-[0.3rem]",
+            icon: " p-2 rounded-full aspect-square",
         },
     },
     defaultVariants: {
@@ -116,7 +116,8 @@ const SelectContent = React.forwardRef<
         <Radix.Content            
             ref={ref}
             sideOffset={sideOffset}
-            className={cn("relative min-w-[8rem] max-h-64 rounded-md text-sm  overflow-hidden bg-neutral-900 p-1" +
+            className={cn("relative min-w-[8rem] max-h-64 rounded-md text-sm  overflow-hidden bg-neutral-900 p-1 shadow-lg shadow-neutral-950" +
+            " " +
             " data-[state=open]:animate-in data-[state-open]:fade-in-0 data-[state=open]:zoom-in-95" + 
             " data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95" +
             " data-[side=left]:slide-in-from-right-3" +
@@ -131,7 +132,7 @@ const SelectContent = React.forwardRef<
             <SelectScrollUpButton/>
             <Radix.Viewport
                 className={cn(
-                    "p-1",
+                    "p-1 g",
                     position==="popper" &&
                     "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
                 )}
