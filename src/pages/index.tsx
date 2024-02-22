@@ -288,7 +288,7 @@ export default function Home() {
           </section>
 
           <section className="flex flex-col items-center justify-center gap-3">
-            <Button variant={"primary"} size={"primary"} onClick={() => toast("Mensagem teste", {
+            <Button variant={"primary"} size={"primary"} onClick={() => toast.success("Mensagem teste", {
               description: "Teste teste teste",
               action: {
                 label: "Undo",
@@ -322,7 +322,7 @@ export default function Home() {
           </section>
 
           <section className="flex flex-col items-center justify-center gap-3">
-            <Button variant={"destructive"} size={"primary"} onClick={() => toast("Mensagem teste", {
+            <Button variant={"destructive"} size={"primary"} onClick={() => toast.info("Mensagem teste", {
               description: "Teste teste teste",
               action: {
                 label: "Undo",
@@ -356,7 +356,7 @@ export default function Home() {
           </section>
 
           <section className="flex flex-col items-center justify-center gap-3">
-            <Button variant={"ghost"} size={"primary"} onClick={() => toast("Mensagem teste", {
+            <Button variant={"ghost"} size={"primary"} onClick={() => toast.error("Mensagem teste", {
               description: "Teste teste teste",
               action: {
                 label: "Undo",
@@ -390,7 +390,7 @@ export default function Home() {
           </section>
 
           <section className="flex flex-col items-center justify-center gap-3">
-            <Button variant={"outline"} size={"primary"} onClick={() => toast("Mensagem teste", {
+            <Button variant={"outline"} size={"primary"} onClick={() => toast.warning("Mensagem teste", {
               description: "Teste teste teste",
               action: {
                 label: "Undo",

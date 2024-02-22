@@ -150,7 +150,7 @@ const SelectItem = React.forwardRef<
     ItemProps & {inset?: boolean}>(({className,children,position, inset, ...props},ref) => (
         <Radix.Item
             ref={ref}
-            className={cn("  flex items-center cursor-default select-none outline-none transition:all px-2 py-1.5 rounded-sm " + 
+            className={cn("  flex items-center cursor-default select-none outline-none transition:all px-2 py-1.5 rounded-md " + 
             " hover:bg-neutral-800 hover:cursor-pointer  ease-in duration-100" +
             " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
             " data-[state=checked]:text-green-500" +

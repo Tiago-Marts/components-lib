@@ -152,19 +152,19 @@ const DropdownMenuCheckbox = React.forwardRef<
     CheckItemProps>(({className, position, children,checked, ...props}, ref) => (
         <Radix.CheckboxItem
             ref={ref}
-            className={cn("group flex relative items-center cursor-default select-none outline-none p-1 transition:all rounded-md" 
+            className={cn(" group flex relative items-center cursor-default select-none outline-none p-1 transition:all rounded-md" 
             +" hover:bg-neutral-800  hover:cursor-pointer  ease-in duration-100" + 
             " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" +
             " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100 " +
-            " data-[state=checked]:text-neutral-50 ", className)}
+            " data-[state=checked]:text-green-500 ", className)}
             checked={checked}
             {...props}
         >
             <span className={cn(checkVariants({position}), 
-            "flex items-center h-5 aspect-square border-dashed border-2 border-neutral-600 rounded-md" + 
+            "flex items-center h-4 w-4 border-dashed border-2 border-neutral-700 rounded-md" + 
             " group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-none")}>
                 <Radix.ItemIndicator className="">
-                    <Check className="h-2.5 w-2.5 "/>
+                    <Check className="h-3 w-3 text-neutral-50"/>
                 </Radix.ItemIndicator>
             </span>
             {children}
@@ -177,14 +177,16 @@ const DropdownMenuRadioItem = React.forwardRef<
     RadioItemProps>(({className, position, children, ...props }, ref) => (
         <Radix.RadioItem
             ref={ref}
-            className={cn("flex relative  items-center cursor-default select-none outline-none transition:al p-1 rounded-md" 
+            className={cn("group flex relative  items-center cursor-default select-none outline-none transition:al p-1 rounded-md" 
             +" hover:bg-neutral-800  hover:cursor-pointer l ease-in duration-100" + 
             " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" +
             " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
             " data-[state=checked]:text-green-500", className)}
             {...props}
         >
-            <span className={cn(radioVariants({position}))}>
+            <span className={cn(radioVariants({position}), 
+            "flex items-center jusitify-center p-1 border-2 border-neutral-700 h-4 w-4 rounded-full" +
+            " group-data-[state=checked]:border-green-500")}>
                 <Radix.ItemIndicator>
                     <Circle className="h-2 aspect-square fill-current"/>
                 </Radix.ItemIndicator>
