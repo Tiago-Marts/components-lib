@@ -11,7 +11,7 @@ const triggerVariants = cva(
     {
     variants: {
         variant: {
-            default: " bg-neutral-900  hover:bg-neutral-800 ",
+            default: " bg-neutral-900  hover:bg-neutral-800 border-t-2 border-t-neutral-800",
             outline: " bg-transparent border-2 border-neutral-700 hover:bg-neutral-800 focus:bg-neutral-800",
             ghost: " bg-transparent hover:bg-neutral-900 focus:bg-neutral-900 ",
         },
@@ -113,7 +113,7 @@ React.ComponentPropsWithoutRef<typeof Radix.Content>
         <Radix.Content 
             ref={ref}
             sideOffset={sideOffset}
-            className={cn("min-w-[8rem] rounded-md text-sm  overflow-hidden bg-neutral-900 p-1 shadow-lg shadow-neutral-950" +
+            className={cn("min-w-[8rem] rounded-xl text-sm  overflow-hidden bg-neutral-900 p-1 shadow-lg shadow-neutral-950" +
             " data-[state=open]:animate-in data-[state-open]:fade-in-0 data-[state=open]:zoom-in-95" + 
             " data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95" +
             " data-[side=left]:slide-in-from-right-3" +
@@ -134,7 +134,7 @@ const DropdownMenuItem = React.forwardRef<
   }
 >(({className, inset, ...props}, ref) => (
     <Radix.Item
-        className={cn("  flex cursor-default select-none outline-none transition:all px-2 py-1.5 rounded-sm" + 
+        className={cn("  flex cursor-default select-none outline-none transition:all px-2 py-1.5 rounded-md" + 
         " hover:bg-neutral-800 hover:cursor-pointer  ease-in duration-100" +
         " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
         " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" ,
@@ -152,17 +152,19 @@ const DropdownMenuCheckbox = React.forwardRef<
     CheckItemProps>(({className, position, children,checked, ...props}, ref) => (
         <Radix.CheckboxItem
             ref={ref}
-            className={cn("flex relative items-center cursor-default select-none outline-none p-1 transition:all rounded-sm" 
+            className={cn("group flex relative items-center cursor-default select-none outline-none p-1 transition:all rounded-md" 
             +" hover:bg-neutral-800  hover:cursor-pointer  ease-in duration-100" + 
             " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" +
-            " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
-            " data-[state=checked]:text-green-500", className)}
+            " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100 " +
+            " data-[state=checked]:text-neutral-50 ", className)}
             checked={checked}
             {...props}
         >
-            <span className={cn(checkVariants({position}))}>
-                <Radix.ItemIndicator >
-                    <Check className="h-4 aspect-square"/>
+            <span className={cn(checkVariants({position}), 
+            "flex items-center h-5 aspect-square border-dashed border-2 border-neutral-600 rounded-md" + 
+            " group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-none")}>
+                <Radix.ItemIndicator className="">
+                    <Check className="h-2.5 w-2.5 "/>
                 </Radix.ItemIndicator>
             </span>
             {children}
@@ -175,7 +177,7 @@ const DropdownMenuRadioItem = React.forwardRef<
     RadioItemProps>(({className, position, children, ...props }, ref) => (
         <Radix.RadioItem
             ref={ref}
-            className={cn("flex relative  items-center cursor-default select-none outline-none transition:al p-1 rounded-sm" 
+            className={cn("flex relative  items-center cursor-default select-none outline-none transition:al p-1 rounded-md" 
             +" hover:bg-neutral-800  hover:cursor-pointer l ease-in duration-100" + 
             " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" +
             " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
@@ -210,7 +212,7 @@ const DropdownMenuSeparator = React.forwardRef<
     React.ComponentPropsWithoutRef<typeof Radix.Separator>>(({className, ...props}, ref) => (
         <Radix.Separator
             ref={ref}
-            className={cn("-mx-1 my-1 h-px bg-neutral-700", className)}
+            className={cn("-mx-1 my-1 h-1 bg-neutral-800", className)}
             {...props}
         />
 ))
@@ -245,7 +247,7 @@ const DropdowMenuSubTrigger = React.forwardRef<
   }
 >(({className, inset, ...props}, ref) => (
     <Radix.SubTrigger
-        className={cn(" flex cursor-default select-none rounded-sm" + 
+        className={cn(" flex cursor-default select-none rounded-md" + 
         " hover:bg-neutral-800 outline-none p-1  hover:cursor-pointer transition:all ease-in duration-100" + 
         " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
         " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" ,

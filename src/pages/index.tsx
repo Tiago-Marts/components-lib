@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSepa
 import { Panel, PanelGroup, PanelHandler } from "../components/resizable-panels";
 import { Checkbox } from "../components/checkbox";
 import { toast, Toaster } from "../components/toast";
+import { Button } from "../components/button";
 
 
 
@@ -282,16 +283,145 @@ export default function Home() {
             </DropdownMenu>
 
             
-            <button onClick={() => toast("Mensagem teste", {
+
+            
+          </section>
+
+          <section className="flex flex-col items-center justify-center gap-3">
+            <Button variant={"primary"} size={"primary"} onClick={() => toast("Mensagem teste", {
               description: "Teste teste teste",
               action: {
                 label: "Undo",
                 onClick: () => console.log("Undo")
               }
-            })}> Teste </button>
+            })} > Teste </Button>
+
+            <Button variant={"primary"} size={"secondary"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+
+            <Button variant={"primary"} size={"sm"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+
+            <Button variant={"primary"} size={"xs"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
           </section>
 
+          <section className="flex flex-col items-center justify-center gap-3">
+            <Button variant={"destructive"} size={"primary"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
 
+            <Button variant={"destructive"} size={"secondary"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+
+            <Button variant={"destructive"} size={"sm"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+
+            <Button variant={"destructive"} size={"xs"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+          </section>
+
+          <section className="flex flex-col items-center justify-center gap-3">
+            <Button variant={"ghost"} size={"primary"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+
+            <Button variant={"ghost"} size={"secondary"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+
+            <Button variant={"ghost"} size={"sm"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+
+            <Button variant={"ghost"} size={"xs"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+          </section>
+
+          <section className="flex flex-col items-center justify-center gap-3">
+            <Button variant={"outline"} size={"primary"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+
+            <Button variant={"outline"} size={"secondary"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+
+            <Button variant={"outline"} size={"sm"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+
+            <Button variant={"outline"} size={"xs"} onClick={() => toast("Mensagem teste", {
+              description: "Teste teste teste",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo")
+              }
+            })} > Teste </Button>
+          </section>
         </section>
 
         <section className="flex flex-row w-full items-center justify-center gap-5">

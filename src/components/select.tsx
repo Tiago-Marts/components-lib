@@ -12,7 +12,7 @@ const triggerVariants = cva(
     {
     variants: {
         variant: {
-            default: " bg-neutral-900  hover:bg-neutral-800 ",
+            default: " bg-neutral-900  hover:bg-neutral-800 border-t-2 border-t-neutral-800 ",
             outline: " bg-transparent border-2 border-neutral-700 hover:bg-neutral-800 focus:bg-neutral-800",
             ghost: " bg-transparent hover:bg-neutral-900 focus:bg-neutral-900 ",
         },
@@ -116,7 +116,7 @@ const SelectContent = React.forwardRef<
         <Radix.Content            
             ref={ref}
             sideOffset={sideOffset}
-            className={cn("relative  min-w-[8rem] max-h-64 rounded-md text-sm  overflow-hidden bg-neutral-900 p-1 shadow-lg shadow-neutral-950" +
+            className={cn("relative  min-w-[8rem] max-h-64 rounded-xl text-sm  overflow-hidden bg-neutral-900 p-1 shadow-lg shadow-neutral-950" +
             " " +
             " data-[state=open]:animate-in data-[state-open]:fade-in-0 data-[state=open]:zoom-in-95" + 
             " data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-90" +
