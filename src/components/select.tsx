@@ -116,10 +116,10 @@ const SelectContent = React.forwardRef<
         <Radix.Content            
             ref={ref}
             sideOffset={sideOffset}
-            className={cn("relative min-w-[8rem] max-h-64 rounded-md text-sm  overflow-hidden bg-neutral-900 p-1 shadow-lg shadow-neutral-950" +
+            className={cn("relative  min-w-[8rem] max-h-64 rounded-md text-sm  overflow-hidden bg-neutral-900 p-1 shadow-lg shadow-neutral-950" +
             " " +
             " data-[state=open]:animate-in data-[state-open]:fade-in-0 data-[state=open]:zoom-in-95" + 
-            " data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95" +
+            " data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-90" +
             " data-[side=left]:slide-in-from-right-3" +
             " data-[side=right]:slide-in-from-left-3" +
             " data-[side=bottom]:slide-in-from-top-3" +
@@ -132,7 +132,7 @@ const SelectContent = React.forwardRef<
             <SelectScrollUpButton/>
             <Radix.Viewport
                 className={cn(
-                    "p-1 g",
+                    "p-1 ",
                     position==="popper" &&
                     "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
                 )}
@@ -150,7 +150,7 @@ const SelectItem = React.forwardRef<
     ItemProps & {inset?: boolean}>(({className,children,position, inset, ...props},ref) => (
         <Radix.Item
             ref={ref}
-            className={cn("  flex items-center cursor-default select-none outline-none transition:all px-2 py-1.5 rounded-sm" + 
+            className={cn("  flex items-center cursor-default select-none outline-none transition:all px-2 py-1.5 rounded-sm " + 
             " hover:bg-neutral-800 hover:cursor-pointer  ease-in duration-100" +
             " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
             " data-[state=checked]:text-green-500" +
