@@ -9,6 +9,7 @@ import { Checkbox } from "../components/checkbox";
 import { toast, Toaster } from "../components/toast";
 import { Button } from "../components/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/tooltip";
+import { Switch, SwitchThumb } from "../components/switch";
 
 
 
@@ -602,7 +603,7 @@ export default function Home() {
 
         <section className="w-full">
           <PanelGroup direction="horizontal" >
-            <Panel defaultSize={60} className=" h-[20rem] flex items-center justify-center"> 
+            <Panel defaultSize={60} className=" h-[20rem] flex items-center justify-center gap-5"> 
             <TooltipProvider>
                 <Tooltip delayDuration={200} >
                   <TooltipTrigger asChild >
@@ -615,6 +616,10 @@ export default function Home() {
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
+
+            <Switch>
+              <SwitchThumb/>
+            </Switch>
           </Panel>
             <PanelHandler withHandle/>
             <Panel defaultSize={20} className="h-[20rem]"></Panel>
