@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
+
 import { cn } from '@/src/lib/util';
+import { Slot } from '@radix-ui/react-slot';
 
 const buttonVariants = cva(
     "flex flex-row items-center justify-center  transition-all font-medium duration-300 ease-[cubic-bezier(0.33, 1, 0.68, 1)]   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background select-none",
@@ -30,18 +32,21 @@ const buttonVariants = cva(
 )
 
 interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, VariantProps<typeof buttonVariants>{
-
+    asChild?: boolean;
 }
 
 
-const Button = ({className,variant, size, ...props} : ButtonProps) => {
+const Button = ({className, children, variant,asChild = false, size, ...props} : ButtonProps) => {
+    const Comp = asChild? Slot : 'button';
     return(
         <button
             className={cn(buttonVariants({variant, size}), 
             "disabled:opacity-50 disabled:cursor-not-allowed ",
             className)}
             {...props}
-        />
+        >
+            {children}
+        </button>
     )
 }
 

@@ -603,19 +603,15 @@ export default function Home() {
         <section className="w-full">
           <PanelGroup direction="horizontal" >
             <Panel defaultSize={60} className=" h-[20rem] flex items-center justify-center"> 
-              <TooltipProvider>
-                <Tooltip delayDuration={500} >
-                  <TooltipTrigger>
-                    <Button variant={"outline"} size={"primary"} onClick={() => toast.warning("Mensagem teste", {
-                      description: "Teste teste teste",
-                      action: {
-                      label: "Undo",
-                      onClick: () => console.log("Undo")
-                    }
-                    })} > Teste </Button>
-                </TooltipTrigger>
-                <TooltipContent side="bottom">
-                Botão Primário
+            <TooltipProvider>
+                <Tooltip delayDuration={200} >
+                  <TooltipTrigger asChild >
+                    <section>
+                    <Button onClick={() => (alert("test"))} size={'primary'}> Teste </Button>
+                    </section>
+                  </TooltipTrigger>
+                <TooltipContent>
+                  Botão Primário
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
