@@ -22,10 +22,10 @@ const Toaster = ({...props}: ToasterProps) => {
                     description: 'ml-2',
                     
                     actionButton: 'group-[.toast]:px-2 group-[.toast]:py-1 group-[.toast]:bg-neutral-50 group-[.toast]:text-neutral-900',
-                    success: ' bg-gradient-to-r from-green-800/[0.43] to-green-700/[0.3]',
-                    warning: " bg-gradient-to-r from-orange-800/[0.43] to-orange-500/[0.3]",
+                    success: ' bg-gradient-to-r from-green-800/[0.4] to-green-700/[0.2]',
+                    warning: " bg-gradient-to-r from-orange-800/[0.4] to-orange-500/[0.2]",
                     error: " bg-gradient-to-r from-red-800/[0.43] to-red-500/[0.3]",
-                    info: " bg-gradient-to-r from-cyan-800/[0.43] to-cyan-500/[0.3]",
+                    info: " bg-gradient-to-r from-cyan-800/[0.4] to-cyan-500/[0.2]",
                     
                 },
                 

@@ -8,6 +8,7 @@ import { Panel, PanelGroup, PanelHandler } from "../components/resizable-panels"
 import { Checkbox } from "../components/checkbox";
 import { toast, Toaster } from "../components/toast";
 import { Button } from "../components/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/tooltip";
 
 
 
@@ -390,14 +391,22 @@ export default function Home() {
           </section>
 
           <section className="flex flex-col items-center justify-center gap-3">
-            <Button variant={"outline"} size={"primary"} onClick={() => toast.warning("Mensagem teste", {
-              description: "Teste teste teste",
-              action: {
-                label: "Undo",
-                onClick: () => console.log("Undo")
-              }
-            })} > Teste </Button>
-
+            <TooltipProvider>
+              <Tooltip>
+              <TooltipTrigger>
+                <Button variant={"outline"} size={"primary"} onClick={() => toast.warning("Mensagem teste", {
+                  description: "Teste teste teste",
+                  action: {
+                    label: "Undo",
+                    onClick: () => console.log("Undo")
+                  }
+                })} > Teste </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                Botão Primário
+              </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
             <Button variant={"outline"} size={"secondary"} onClick={() => toast("Mensagem teste", {
               description: "Teste teste teste",
               action: {
@@ -425,6 +434,7 @@ export default function Home() {
         </section>
 
         <section className="flex flex-row w-full items-center justify-center gap-5">
+        
           <section className="flex flex-col items-center justify-center gap-3">
           <Select>
             <SelectTrigger variant={"outline"}> <SelectValue placeholder="Clique aqui"/> </SelectTrigger>
@@ -592,7 +602,24 @@ export default function Home() {
 
         <section className="w-full">
           <PanelGroup direction="horizontal" >
-            <Panel defaultSize={60} className=" h-[20rem]"></Panel>
+            <Panel defaultSize={60} className=" h-[20rem] flex items-center justify-center"> 
+              <TooltipProvider>
+                <Tooltip delayDuration={500} >
+                  <TooltipTrigger>
+                    <Button variant={"outline"} size={"primary"} onClick={() => toast.warning("Mensagem teste", {
+                      description: "Teste teste teste",
+                      action: {
+                      label: "Undo",
+                      onClick: () => console.log("Undo")
+                    }
+                    })} > Teste </Button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom">
+                Botão Primário
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </Panel>
             <PanelHandler withHandle/>
             <Panel defaultSize={20} className="h-[20rem]"></Panel>
             <PanelHandler withHandle/>
