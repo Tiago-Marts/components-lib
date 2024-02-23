@@ -10,6 +10,7 @@ import { toast, Toaster } from "../components/toast";
 import { Button } from "../components/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/tooltip";
 import { Switch, SwitchThumb } from "../components/switch";
+import { AlertAction, AlertCancel, AlertContent, AlertDescription, AlertDialog, AlertTitle, AlertTrigger } from "../components/alert-dialog";
 
 
 
@@ -611,7 +612,7 @@ export default function Home() {
                     <Button onClick={() => (alert("test"))} size={'primary'}> Teste </Button>
                     </section>
                   </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="top">
                   Botão Primário
                 </TooltipContent>
               </Tooltip>
@@ -620,9 +621,28 @@ export default function Home() {
             <Switch>
               <SwitchThumb/>
             </Switch>
+
           </Panel>
             <PanelHandler withHandle/>
-            <Panel defaultSize={20} className="h-[20rem]"></Panel>
+            <Panel defaultSize={20} className="h-[20rem] relative flex items-center justify-center gap-5">
+              <AlertDialog >
+                <AlertTrigger asChild> 
+                  <section>
+                    <Button variant={"destructive"} > Alert </Button>
+                  </section>
+                </AlertTrigger>
+                <AlertContent>
+                    <section className="texts p-3">
+                      <AlertTitle> Um título teste </AlertTitle>
+                      <AlertDescription> Uma descrição teste para um alerta teste</AlertDescription>
+                    </section>
+                    <section className="actions border-t border-neutral-800 w-full h-full grid grid-rows-2 divide-y divide-neutral-800  ">
+                      <AlertCancel> Cancelar </AlertCancel>
+                      <AlertAction> Ação </AlertAction>
+                    </section>
+                </AlertContent>
+              </AlertDialog>
+            </Panel>
             <PanelHandler withHandle/>
             <Panel defaultSize={10} className="bg-transparent">
               <PanelGroup direction="vertical"   >

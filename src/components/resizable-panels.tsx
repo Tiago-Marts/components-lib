@@ -46,7 +46,7 @@ const PanelHandler = React.forwardRef<
 
     >
         {withHandle && (
-            <span className=' absolute z-50 flex  items-center justify-center h-6 w-[12px]  rounded-sm bg-neutral-800 hover:bg-neutral-700 transition-colors'>
+            <span className=' absolute  flex  items-center justify-center h-6 w-[12px]  rounded-sm bg-neutral-800 hover:bg-neutral-700 transition-colors'>
                 <GripVertical className=''/>
             </span>
         )}
