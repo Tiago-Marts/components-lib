@@ -11,6 +11,7 @@ import { Button } from "../components/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/tooltip";
 import { Switch, SwitchThumb } from "../components/switch";
 import { AlertAction, AlertCancel, AlertContent, AlertDescription, AlertDialog, AlertTitle, AlertTrigger } from "../components/alert-dialog";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "../components/dialog";
 
 
 
@@ -642,6 +643,15 @@ export default function Home() {
                     </section>
                 </AlertContent>
               </AlertDialog>
+              <Dialog >
+                <DialogTrigger> <Button> Dialog</Button></DialogTrigger>
+                <DialogContent>
+                  <DialogTitle> Um título para um modal teste </DialogTitle>
+                  <DialogDescription> Uma descrição para um modal aleatório </DialogDescription>
+                  <Button variant={"outline"} size={"secondary"} > Salvar</Button>
+                  <DialogClose/>
+                </DialogContent>
+              </Dialog>
             </Panel>
             <PanelHandler withHandle/>
             <Panel defaultSize={10} className="bg-transparent">
