@@ -12,6 +12,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../com
 import { Switch, SwitchThumb } from "../components/switch";
 import { AlertAction, AlertCancel, AlertContent, AlertDescription, AlertDialog, AlertTitle, AlertTrigger } from "../components/alert-dialog";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "../components/dialog";
+import { Calendar } from "../components/calendar";
 
 
 
@@ -19,6 +20,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [checked, setChecked] = useState(false)
+  const [date, setDate] = useState<Date | undefined>(new Date())
+
   function handleChecked() {
     checked? setChecked(false) : setChecked(true);
   }
@@ -623,6 +626,8 @@ export default function Home() {
               <SwitchThumb/>
             </Switch>
 
+            <Calendar mode="single" selected={date} onSelect={setDate}/>
+
           </Panel>
             <PanelHandler withHandle/>
             <Panel defaultSize={20} className="h-[20rem] relative flex items-center justify-center gap-5">
@@ -644,7 +649,11 @@ export default function Home() {
                 </AlertContent>
               </AlertDialog>
               <Dialog >
-                <DialogTrigger> <Button> Dialog</Button></DialogTrigger>
+                <DialogTrigger asChild> 
+                  <section>
+                  <Button> Dialog</Button>
+                  </section>
+                </DialogTrigger>
                 <DialogContent>
                   <DialogTitle> Um título para um modal teste </DialogTitle>
                   <DialogDescription> Uma descrição para um modal aleatório </DialogDescription>
