@@ -15,6 +15,7 @@ import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, Dia
 import { Calendar } from "../components/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "../components/popover";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../components/carousel";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs";
 
 
 
@@ -691,7 +692,7 @@ export default function Home() {
             <PanelHandler withHandle/>
             <Panel defaultSize={10} className="bg-transparent">
               <PanelGroup direction="vertical"   >
-                <Panel defaultSize={50} className="flex items-center justify-center p-1">
+                <Panel defaultSize={50} className="flex items-center justify-center p-1 ">
                   <Carousel className="w-full max-w-[500px]" >
                     <CarouselContent className="w-full" >
                       {Array.from({length: 5}).map((_, index) => (
@@ -707,7 +708,24 @@ export default function Home() {
                   </Carousel>
                 </Panel>
                 <PanelHandler withHandle/>
-                <Panel defaultSize={40}></Panel>
+                <Panel defaultSize={40} className="flex items-center justify-center p-1 bg-neutral-950">
+                  <Tabs defaultValue="page-1" orientation="vertical">
+                    <TabsList >
+                      <TabsTrigger value="page-1"> Teste 1</TabsTrigger>
+                      <TabsTrigger value="page-2"> Teste 2</TabsTrigger>
+                    </TabsList>
+                    <TabsContent value="page-1">
+                      <div className="w-full flex items-center justify-center border-2 border-neutral-700 p-3 rounded-lg">
+                        Conteudo 1
+                      </div>
+                    </TabsContent>
+                    <TabsContent value="page-2">
+                      <div className="w-full flex items-center justify-center border-2 border-neutral-700 p-3 rounded-lg">
+                        Conteudo 2
+                      </div>
+                    </TabsContent>
+                  </Tabs>
+                </Panel>
               </PanelGroup>
             </Panel>
           </PanelGroup>
