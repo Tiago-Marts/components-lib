@@ -10,7 +10,7 @@ const Switch = React.forwardRef<
         <Radix.Root
             ref={ref}
             className={cn(
-                "bg-neutral-800 w-[50px] h-[25px] rounded-full p-1 shadow-inner shadow-black/70 data-[state=checked]:bg-green-500 transition-colors ease-[cubic-bezier(0.25, 1, 0.5, 1)]" 
+                "bg-neutral-800 min-w-[50px] h-[25px] rounded-full p-1 shadow-inner shadow-black/70 data-[state=checked]:bg-green-500 transition-colors ease-[cubic-bezier(0.25, 1, 0.5, 1)]" 
                     , className
             )}
             {...props}
