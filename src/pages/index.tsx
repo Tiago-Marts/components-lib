@@ -14,6 +14,7 @@ import { AlertAction, AlertCancel, AlertContent, AlertDescription, AlertDialog, 
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "../components/dialog";
 import { Calendar } from "../components/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "../components/popover";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../components/carousel";
 
 
 
@@ -690,7 +691,21 @@ export default function Home() {
             <PanelHandler withHandle/>
             <Panel defaultSize={10} className="bg-transparent">
               <PanelGroup direction="vertical"   >
-                <Panel defaultSize={50} ></Panel>
+                <Panel defaultSize={50} className="flex items-center justify-center p-1">
+                  <Carousel className="w-full max-w-[500px]" >
+                    <CarouselContent className="w-full" >
+                      {Array.from({length: 5}).map((_, index) => (
+                        <CarouselItem className="basis-1/3 max-w-[100px] min-w-[80px]">
+                          <div className=" h-6 flex items-center justify-center rounded-full border-2 border-neutral-700">
+                            <span> {index+1}</span>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious/>
+                    <CarouselNext/>
+                  </Carousel>
+                </Panel>
                 <PanelHandler withHandle/>
                 <Panel defaultSize={40}></Panel>
               </PanelGroup>
