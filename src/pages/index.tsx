@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { DropDownMenuContent, DropdowMenuSubTrigger, DropdownMenu, DropdownMenuCheckbox, DropdownMenuItem, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuTrigger } from "../components/dropdown";
-import { ChevronDown } from "lucide-react" ;
+import { CalendarDays, ChevronDown, Settings2 } from "lucide-react" ;
 import { useState } from "react";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue, SelectViewPort } from "../components/select";
 import { Panel, PanelGroup, PanelHandler } from "../components/resizable-panels";
@@ -13,6 +13,7 @@ import { Switch, SwitchThumb } from "../components/switch";
 import { AlertAction, AlertCancel, AlertContent, AlertDescription, AlertDialog, AlertTitle, AlertTrigger } from "../components/alert-dialog";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "../components/dialog";
 import { Calendar } from "../components/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "../components/popover";
 
 
 
@@ -622,11 +623,35 @@ export default function Home() {
               </Tooltip>
             </TooltipProvider>
 
+
+
             <Switch>
               <SwitchThumb/>
             </Switch>
 
             <Calendar mode="single" selected={date} onSelect={setDate}/>
+
+            <Popover>
+              <PopoverTrigger asChild>
+                <section>
+                  <Button variant={"outline"} size={"icon"}> <CalendarDays/> </Button>
+                </section>
+              </PopoverTrigger>
+              <PopoverContent className="bg-transparent p-0 rounded-xl" side="bottom" hasArrow={false}>
+                <Calendar/>
+              </PopoverContent>
+            </Popover>
+
+            <Popover>
+              <PopoverTrigger asChild>
+                <section>
+                  <Button variant={"outline"} size={"icon"}> <Settings2/> </Button>
+                </section>
+              </PopoverTrigger>
+              <PopoverContent side="bottom">
+                Um popover teste
+              </PopoverContent>
+            </Popover>
 
           </Panel>
             <PanelHandler withHandle/>
