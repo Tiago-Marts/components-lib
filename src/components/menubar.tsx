@@ -54,7 +54,7 @@ const Menubar = React.forwardRef<
     <Radix.Root
         ref={ref}
         className={cn(
-            "",
+            "w-full max-w-[300px] px-3 py-1.5 flex flex-row justify-around items-center gap-6 bg-neutral-800 rounded-xl shadow-lg shadow-black/25",
             className
         )}
         {...props}
@@ -66,8 +66,8 @@ const MenubarMenu = Radix.Menu;
 const MenubarSubMenu = Radix.Sub;
 
 //Groups wrappers
-const MenuRadioGroup = Radix.RadioGroup;
-const MenuGroup = Radix.Group;
+const MenubarRadioGroup = Radix.RadioGroup;
+const MenubarGroup = Radix.Group;
 
 //Trigger
 const MenubarTrigger = React.forwardRef<
@@ -77,7 +77,9 @@ const MenubarTrigger = React.forwardRef<
     <Radix.Trigger
         ref={ref}
         className={cn(
-            "",
+            " flex items-center justify-center px-2 py-[2px] rounded-md " + 
+            " hover:bg-neutral-900/70" + 
+            " data-[state=open]:bg-neutral-900",
             className
         )}
         {...props}
@@ -95,8 +97,10 @@ const MenubarContent = React.forwardRef<
         <Radix.Content
             ref={ref}
             sideOffset={sideOffset}
+            align='start'
             className={cn(
-                "",
+                "flex flex-col items-start justify-center p-1 gap-1 min-w-[14rem] bg-neutral-800 mt-2 mb-2 *:text-sm rounded-xl shadow-lg shadow-black/25" + 
+                " data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
                 className
             )}
             {...props}
@@ -113,7 +117,8 @@ const MenubarItem = React.forwardRef<
     <Radix.Item
         ref={ref}
         className={cn(
-            "",
+            "flex items-center justify-between px-2 py-1.5 w-full rounded-md cursor-pointer " + 
+            " hover:bg-neutral-900",
             className
         )}
         {...props}
@@ -206,7 +211,8 @@ const MenubarSubTrigger = React.forwardRef<
     <Radix.SubTrigger
         ref={ref}
         className={cn(
-            "",
+            "flex items-center justify-between px-1.5 py-[3px] w-full rounded-md cursor-pointer " + 
+            " hover:bg-neutral-900",
             className
         )}
         {...props}
@@ -219,13 +225,14 @@ const MenubarSubTrigger = React.forwardRef<
 const MenubarSubContent = React.forwardRef<
     React.ElementRef<typeof Radix.SubContent>,
     React.ComponentPropsWithoutRef<typeof Radix.SubContent>
->(({className, sideOffset=4, ...props}, ref) => (
+>(({className, sideOffset=9, ...props}, ref) => (
     
     <Radix.SubContent
         ref={ref}
         sideOffset={sideOffset}
         className={cn(
-            "",
+            "flex flex-col items-start justify-center p-3 gap-3 bg-neutral-800  *:text-sm rounded-xl shadow-lg shadow-black/25" + 
+            " data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
             className
         )}
         {...props}
@@ -236,12 +243,15 @@ const MenubarSubContent = React.forwardRef<
 //Todos exports 
 export {
     Menubar,
-    MenuGroup,
-    MenuRadioGroup,
+    MenubarMenu,
+    MenubarSubMenu,
+    MenubarGroup,
+    MenubarRadioGroup,
     MenubarLabel,
     MenubarSeparator,
     MenubarTrigger,
     MenubarContent,
+    MenubarItem,
     MenubarSubTrigger,
     MenubarSubContent,
     MenubarCheckboxItem,

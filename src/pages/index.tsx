@@ -16,6 +16,7 @@ import { Calendar } from "../components/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "../components/popover";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../components/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs";
+import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarSubContent, MenubarSubMenu, MenubarSubTrigger, MenubarTrigger } from "../components/menubar";
 
 
 
@@ -607,6 +608,67 @@ export default function Home() {
             <Checkbox/> 
           </section>
 
+          <section>
+            <Menubar>
+              <MenubarMenu>
+                <MenubarTrigger> Files </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem> Item </MenubarItem>
+                  <MenubarItem> Item </MenubarItem>
+                  <MenubarItem> Item 1 </MenubarItem>
+                  <MenubarSubMenu>
+                    <MenubarSubTrigger> Share</MenubarSubTrigger>
+                    <MenubarSubContent> 
+                      <MenubarItem> Email </MenubarItem>
+                    </MenubarSubContent>
+                  </MenubarSubMenu>
+                </MenubarContent>
+              </MenubarMenu>
+
+              <MenubarMenu>
+                <MenubarTrigger> Edit </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem> Undo </MenubarItem>
+                  <MenubarItem> Redo </MenubarItem>
+                  <MenubarSeparator/>
+                  <MenubarSubMenu>
+                    <MenubarSubTrigger> Find</MenubarSubTrigger>
+                    <MenubarSubContent> 
+                      <MenubarItem> Search the web </MenubarItem>
+                      <MenubarItem> Find ... </MenubarItem>
+                      <MenubarItem> Find Next </MenubarItem>
+                    </MenubarSubContent>
+                  </MenubarSubMenu>
+                  <MenubarSeparator/>
+                  <MenubarItem> Cut </MenubarItem>
+                  <MenubarItem> Copy </MenubarItem>
+                  <MenubarItem> Paste </MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+
+              <MenubarMenu>
+                <MenubarTrigger> View </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarCheckboxItem> Always Show Bookmarks Bar </MenubarCheckboxItem>
+                  <MenubarCheckboxItem> Always Show Full URls </MenubarCheckboxItem>
+                  <MenubarSeparator/>
+                  <MenubarItem> Reload </MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+
+              <MenubarMenu>
+                <MenubarTrigger> Profiles </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarRadioGroup value="Luis">
+                    <MenubarRadioItem value="Andy"> Andy </MenubarRadioItem>
+                    <MenubarRadioItem value="Benoit"> Benoit </MenubarRadioItem>
+                    <MenubarRadioItem value="Luis"> Luis </MenubarRadioItem>
+                  </MenubarRadioGroup>
+                </MenubarContent>
+              </MenubarMenu>
+            </Menubar>
+          </section>
+
         </section>
 
         <section className="w-full">
@@ -654,6 +716,65 @@ export default function Home() {
                 Um popover teste
               </PopoverContent>
             </Popover>
+
+            <Menubar>
+              <MenubarMenu>
+                <MenubarTrigger> Files </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem> Item </MenubarItem>
+                  <MenubarItem> Item </MenubarItem>
+                  <MenubarItem> Item 1 </MenubarItem>
+                  <MenubarSubMenu>
+                    <MenubarSubTrigger> Share</MenubarSubTrigger>
+                    <MenubarSubContent> 
+                      <MenubarItem> Email </MenubarItem>
+                    </MenubarSubContent>
+                  </MenubarSubMenu>
+                </MenubarContent>
+              </MenubarMenu>
+
+              <MenubarMenu>
+                <MenubarTrigger> Edit </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem> Undo </MenubarItem>
+                  <MenubarItem> Redo </MenubarItem>
+                  <MenubarSeparator/>
+                  <MenubarSubMenu>
+                    <MenubarSubTrigger> Find</MenubarSubTrigger>
+                    <MenubarSubContent> 
+                      <MenubarItem> Search the web </MenubarItem>
+                      <MenubarItem> Find ... </MenubarItem>
+                      <MenubarItem> Find Next </MenubarItem>
+                    </MenubarSubContent>
+                  </MenubarSubMenu>
+                  <MenubarSeparator/>
+                  <MenubarItem> Cut </MenubarItem>
+                  <MenubarItem> Copy </MenubarItem>
+                  <MenubarItem> Paste </MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+
+              <MenubarMenu>
+                <MenubarTrigger> View </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarCheckboxItem> Always Show Bookmarks Bar </MenubarCheckboxItem>
+                  <MenubarCheckboxItem> Always Show Full URls </MenubarCheckboxItem>
+                  <MenubarSeparator/>
+                  <MenubarItem> Reload </MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+
+              <MenubarMenu>
+                <MenubarTrigger> Profiles </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarRadioGroup value="Luis">
+                    <MenubarRadioItem value="Andy"> Andy </MenubarRadioItem>
+                    <MenubarRadioItem value="Benoit"> Benoit </MenubarRadioItem>
+                    <MenubarRadioItem value="Luis"> Luis </MenubarRadioItem>
+                  </MenubarRadioGroup>
+                </MenubarContent>
+              </MenubarMenu>
+            </Menubar>
 
           </Panel>
             <PanelHandler withHandle/>
