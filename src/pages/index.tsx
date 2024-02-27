@@ -17,6 +17,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "../components/popover";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../components/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs";
 import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarSubContent, MenubarSubMenu, MenubarSubTrigger, MenubarTrigger } from "../components/menubar";
+import { Drawer, DrawerContent, DrawerTrigger } from "../components/drawer";
 
 
 
@@ -403,7 +404,8 @@ export default function Home() {
           <section className="flex flex-col items-center justify-center gap-3">
             <TooltipProvider>
               <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger asChild>
+                <section>
                 <Button variant={"outline"} size={"primary"} onClick={() => toast.warning("Mensagem teste", {
                   description: "Teste teste teste",
                   action: {
@@ -411,6 +413,7 @@ export default function Home() {
                     onClick: () => console.log("Undo")
                   }
                 })} > Teste </Button>
+                </section>
               </TooltipTrigger>
               <TooltipContent>
                 Botão Primário
@@ -440,6 +443,19 @@ export default function Home() {
                 onClick: () => console.log("Undo")
               }
             })} > Teste </Button>
+          </section>
+
+          <section>
+            <Drawer direction="left" shouldScaleBackground>
+              <DrawerTrigger> 
+                <section> <Button variant={"outline"} size={"secondary"}> Open Drawer </Button></section>
+              </DrawerTrigger>
+              <DrawerContent horizontal >
+                <section>
+                  <h1>Teste</h1>
+                </section>
+              </DrawerContent>
+            </Drawer>
           </section>
         </section>
 
