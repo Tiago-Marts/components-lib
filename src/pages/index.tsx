@@ -767,7 +767,7 @@ export default function Home() {
               <MenubarMenu>
                 <MenubarTrigger> Profiles </MenubarTrigger>
                 <MenubarContent>
-                  <MenubarRadioGroup value="Luis">
+                  <MenubarRadioGroup value="Luis" className="w-full">
                     <MenubarRadioItem value="Andy"> Andy </MenubarRadioItem>
                     <MenubarRadioItem value="Benoit"> Benoit </MenubarRadioItem>
                     <MenubarRadioItem value="Luis"> Luis </MenubarRadioItem>

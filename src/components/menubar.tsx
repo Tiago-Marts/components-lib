@@ -148,10 +148,10 @@ const MenubarCheckboxItem = React.forwardRef<
     CheckItemProps>(({className, position, children,checked, ...props}, ref) => (
         <Radix.CheckboxItem
             ref={ref}
-            className={cn(" group flex relative items-center cursor-default select-none outline-none p-1 transition:all rounded-md" 
-            +" hover:bg-neutral-800  hover:cursor-pointer  ease-in duration-100" + 
+            className={cn(" group flex relative items-center justify-between w-full cursor-default select-none outline-none px-2 py-1.5 transition:all rounded-md" 
+            +" hover:bg-neutral-900  hover:cursor-pointer  ease-in duration-100" + 
             " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" +
-            " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100 " +
+            " focus:bg-neutral-900 focus:cursor-pointer  ease-in duration-100 " +
             " data-[state=checked]:text-green-500 ", className)}
             checked={checked}
             {...props}
@@ -174,10 +174,10 @@ const MenubarRadioItem = React.forwardRef<
     RadioItemProps>(({className, position, children, ...props }, ref) => (
         <Radix.RadioItem
             ref={ref}
-            className={cn("group flex relative  items-center cursor-default select-none outline-none transition:al p-1 rounded-md" 
-            +" hover:bg-neutral-800  hover:cursor-pointer l ease-in duration-100" + 
+            className={cn("group flex w-full  relative  items-center justify-between cursor-default select-none outline-none transition:al px-2 py-1.5 rounded-md" 
+            +" hover:bg-neutral-900   hover:cursor-pointer l ease-in duration-100" + 
             " data-[disabled]:pointer-events-none data-[disabled]:opacity-50" +
-            " focus:bg-neutral-800 focus:cursor-pointer  ease-in duration-100" +
+            " focus:bg-neutral-900  focus:cursor-pointer  ease-in duration-100" +
             " data-[state=checked]:text-green-500", className)}
             {...props}
         >
@@ -198,7 +198,7 @@ const MenubarSeparator = React.forwardRef<
     React.ComponentPropsWithoutRef<typeof Radix.Separator>>(({className, ...props}, ref) => (
         <Radix.Separator
             ref={ref}
-            className={cn("-mx-1 my-1 h-1 bg-neutral-800", className)}
+            className={cn(" my-[2px] h-1 w-full bg-neutral-900/50", className)}
             {...props}
         />
 ))
@@ -231,7 +231,7 @@ const MenubarSubContent = React.forwardRef<
         ref={ref}
         sideOffset={sideOffset}
         className={cn(
-            "flex flex-col items-start justify-center p-3 gap-3 bg-neutral-800  *:text-sm rounded-xl shadow-lg shadow-black/25" + 
+            "flex flex-col items-start justify-center p-1 gap-1 min-w-[100px] bg-neutral-800  *:text-sm rounded-xl shadow-lg shadow-black/25" + 
             " data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
             className
         )}
