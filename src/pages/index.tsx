@@ -18,6 +18,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs";
 import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarSubContent, MenubarSubMenu, MenubarSubTrigger, MenubarTrigger } from "../components/menubar";
 import { Drawer, DrawerContent, DrawerTrigger } from "../components/drawer";
+import { Accordion, AccordionContent, AccordionHeader, AccordionItem, AccordionTrigger } from "../components/accordion";
 
 
 
@@ -445,7 +446,7 @@ export default function Home() {
             })} > Teste </Button>
           </section>
 
-          <section>
+          <section className="flex flex-col gap-5 items-center justify-center">
             <Drawer direction="left" shouldScaleBackground>
               <DrawerTrigger> 
                 <section> <Button variant={"outline"} size={"secondary"}> Open Drawer </Button></section>
@@ -456,6 +457,36 @@ export default function Home() {
                 </section>
               </DrawerContent>
             </Drawer>
+
+            <Accordion type="single" defaultValue="item-1" collapsible>
+              <AccordionItem value="item-1">
+                  <AccordionHeader className="w-full"> 
+                    <AccordionTrigger> Is it acessible?</AccordionTrigger> 
+                  </AccordionHeader>
+                  <AccordionContent>
+                    Yes. It adheres to the WAI-ARIA design pattern.
+                  </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2">
+                  <AccordionHeader className="w-full"> 
+                    <AccordionTrigger> Is it unstyled?</AccordionTrigger> 
+                  </AccordionHeader>
+                  <AccordionContent>
+                    Yes. It's unstyled by default, giving you freedom over the look and feel.
+                  </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3">
+                  <AccordionHeader className="w-full"> 
+                    <AccordionTrigger> Can it be animated?</AccordionTrigger> 
+                  </AccordionHeader>
+                  <AccordionContent>
+                    Yes! You can animate the Accordion with CSS or JavaScript.
+                  </AccordionContent>
+              </AccordionItem>
+              
+            </Accordion>
           </section>
         </section>
 

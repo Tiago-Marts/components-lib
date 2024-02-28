@@ -30,7 +30,7 @@ const DrawerContent = React.forwardRef<
             ref={ref}
             className={cn(
                 "bg-neutral-900 flex flex-col p-2 fixed bottom-0 right-0 left-0 mt-24 min-h-[30%] rounded-t-2xl",
-                horizontal && " w-[25%]  h-[100%]  mt-0 rounded-t-none rounded-r-2xl bottom-10 top-0 left-0 flex-row-reverse ",
+                horizontal && " w-[25%]  h-[100%]  mt-0 rounded-l-none rounded-r-2xl bottom-10 top-0 left-0 flex-row-reverse ",
                 className
             )}
             {...props}
