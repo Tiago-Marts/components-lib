@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import { DropDownMenuContent, DropdowMenuSubTrigger, DropdownMenu, DropdownMenuCheckbox, DropdownMenuItem, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuTrigger } from "../components/dropdown";
 import { CalendarDays, ChevronDown, Settings2 } from "lucide-react" ;
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue, SelectViewPort } from "../components/select";
 import { Panel, PanelGroup, PanelHandler } from "../components/resizable-panels";
 import { Checkbox } from "../components/checkbox";
@@ -19,6 +19,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs";
 import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarSubContent, MenubarSubMenu, MenubarSubTrigger, MenubarTrigger } from "../components/menubar";
 import { Drawer, DrawerContent, DrawerTrigger } from "../components/drawer";
 import { Accordion, AccordionContent, AccordionHeader, AccordionItem, AccordionTrigger } from "../components/accordion";
+import { Progress } from "../components/progress";
 
 
 
@@ -27,6 +28,12 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [checked, setChecked] = useState(false)
   const [date, setDate] = useState<Date | undefined>(new Date())
+  const [progress, setProgress] = useState(13);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setProgress(66), 500)
+    return () => clearTimeout(timer);
+  }, [])
 
   function handleChecked() {
     checked? setChecked(false) : setChecked(true);
@@ -458,7 +465,7 @@ export default function Home() {
               </DrawerContent>
             </Drawer>
 
-            <Accordion type="single" defaultValue="item-1" collapsible>
+            <Accordion type="single"  collapsible>
               <AccordionItem value="item-1">
                   <AccordionHeader className="w-full"> 
                     <AccordionTrigger> Is it acessible?</AccordionTrigger> 
@@ -487,6 +494,8 @@ export default function Home() {
               </AccordionItem>
               
             </Accordion>
+
+            <Progress value={progress}/>
           </section>
         </section>
 
