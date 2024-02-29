@@ -20,6 +20,7 @@ import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu,
 import { Drawer, DrawerContent, DrawerTrigger } from "../components/drawer";
 import { Accordion, AccordionContent, AccordionHeader, AccordionItem, AccordionTrigger } from "../components/accordion";
 import { Progress } from "../components/progress";
+import { Slider } from "../components/slider";
 
 
 
@@ -664,7 +665,7 @@ export default function Home() {
             <Checkbox/> 
           </section>
 
-          <section>
+          <section className="flex flex-col items-center justify-center gap-5">
             <Menubar>
               <MenubarMenu>
                 <MenubarTrigger> Files </MenubarTrigger>
@@ -723,6 +724,7 @@ export default function Home() {
                 </MenubarContent>
               </MenubarMenu>
             </Menubar>
+            <Slider defaultValue={[45]} max={100} step={1}/>
           </section>
 
         </section>
