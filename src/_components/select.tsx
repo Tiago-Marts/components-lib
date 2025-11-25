@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as Radix from '@radix-ui/react-select';
 import {cva, type VariantProps} from 'class-variance-authority'
-import {cn} from '@/src/lib/util'
+import {cn} from '@/src/_lib/util'
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 //Trigger variants

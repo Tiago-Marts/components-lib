@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Drawer as Vaul } from 'vaul'
-import { cn } from '@/src/lib/util'
+import { cn } from '@/src/_lib/util'
 
 const Drawer = Vaul.Root;
 

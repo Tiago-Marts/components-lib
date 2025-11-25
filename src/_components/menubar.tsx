@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as Radix from '@radix-ui/react-menubar';
-import { cn } from '@/src/lib/util';
+import { cn } from '@/src/_lib/util';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Check, Circle } from 'lucide-react';
 

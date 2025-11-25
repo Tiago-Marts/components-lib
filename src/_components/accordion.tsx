@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as Radix from '@radix-ui/react-accordion';
-import { cn } from '@/src/lib/util';
+import { cn } from '@/src/_lib/util';
 import { ChevronDown } from 'lucide-react';
 
 //Header

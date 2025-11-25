@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as Radix from '@radix-ui/react-popover';
-import { cn } from '@/src/lib/util';
+import { cn } from '@/src/_lib/util';
 
 const Popover = Radix.Root;
 

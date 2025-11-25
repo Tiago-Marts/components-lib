@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PanelPrimitive from 'react-resizable-panels'
 import {cva, type VariantProps} from 'class-variance-authority'
-import {cn} from '@/src/lib/util'
+import {cn} from '@/src/_lib/util'
 import { GripVertical } from 'lucide-react';
 
 

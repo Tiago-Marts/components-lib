@@ -1,7 +1,7 @@
 //Shadcn Dash carousel that uses Embla's API
 
 import * as React from 'react';
-import { cn } from '@/src/lib/util';
+import { cn } from '@/src/_lib/util';
 
 import {EmblaOptionsType } from 'embla-carousel';
 import useEmblaCarousel, {
@@ -10,7 +10,7 @@ import useEmblaCarousel, {
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-import { Button } from "@/src/components/button"
+import { Button } from "@/src/_components/button"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>

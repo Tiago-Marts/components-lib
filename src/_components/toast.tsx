@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as Sonner from 'sonner';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/src/lib/util';
+import { cn } from '@/src/_lib/util';
 import { ChevronDown } from 'lucide-react';
 
 type ToasterProps = React.ComponentProps<typeof Sonner.Toaster>
