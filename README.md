@@ -1,5 +1,5 @@
 ## Introdução
-![Imagem contendo a maioria dos components](https://imgur.com/a/6Eahlp8)
+![Imagem contendo a maioria dos components](https://imgur.com/G4xjuZW)
 Essa é uma biblioteca pessoal de componentes que eu reutilizo com frequência. Construí ela fortemente influenciado pelo [shadcn/ui](https://ui.shadcn.com), seguindo o mesmo modelo de estruturação de componentes e a mudando conforme eu achei necessário. 
 
 ## Componentes
